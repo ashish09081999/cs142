@@ -30,7 +30,7 @@ public:
     }
     bool isEmpty()
     {
-        if(front = NULL)
+        if(front == NULL)
             return true;
         return false;
     }
@@ -41,6 +41,24 @@ public:
     void display()
     {
         l1.display();
+    }
+    void frontDisplay()
+    {
+	if(l1.head==NULL)
+	{	cout<<"The Queue has no element"<<endl;
+	}
+	else
+	{	cout<<"The front element is "<<l1.head->data<<endl;
+	}
+    }
+    void endDisplay()
+    {
+	if(l1.tail==NULL)
+	{	cout<<"The Queue has no element"<<endl;
+	}
+	else
+	{	cout<<"The front element is "<<l1.tail->data<<endl;
+	}
     }
 
 
@@ -60,8 +78,13 @@ int main()
     q1.display();
     q1.dequeue();
     q1.display();
+    q1.dequeue();
+    q1.display();
 
 
     cout<<q1.isEmpty()<<endl;
-    cout<<q1.size();
+    cout<<q1.size()<<endl;
+    q1.frontDisplay();
+    q1.endDisplay();
+
 }

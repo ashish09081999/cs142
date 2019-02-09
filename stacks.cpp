@@ -36,8 +36,15 @@ class stack{
     {
        return l1.countItems();
     }
-    int topDisplay()
+    void topDisplay()
     {
+	if(l1.head==NULL)
+	{	cout<<"The stack has no element"<<endl;
+	}
+	else
+	{	cout<<"The top element is "<<l1.head->data<<endl;
+	}
+
 
     }
     void display()
@@ -50,7 +57,7 @@ class stack{
 int main()
 {
     stack s1;
-    for(int i=0;i<15;i++)
+    for(int i=1;i<3;i++)
     {
         s1.push(i);
 
@@ -58,6 +65,12 @@ int main()
     s1.display();
     s1.pop();
     s1.display();
+    s1.pop();
+    s1.display();
+    s1.pop();
+    s1.display();
+
     cout<<s1.isEmpty()<<endl;
     cout<<s1.size()<<endl;
+    s1.topDisplay();
 }

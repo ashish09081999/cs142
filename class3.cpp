@@ -67,8 +67,14 @@ class LinkedList{
     }
 
     // Deletion of last element
-    void delet(){
+    int delet(){
         // store the tail in temp
+	if(head->next==NULL)
+	{ 	head=NULL;
+		tail=NULL;
+
+	}
+	else{
         Node * temp = tail;
         // before tail has to point to null
         Node * current = head;
@@ -80,7 +86,9 @@ class LinkedList{
         // update tail
         tail = current;
         // delete temp
+
          delete temp;
+         }
     }
     //Deletion at some position
     void deletAt(int pos){
@@ -124,12 +132,17 @@ class LinkedList{
     int countItems(){
         int i=1;
         // before tail has to point to null
+	if(head==NULL)
+	{	//cout<<"The total elements is 0"<<endl;
+        return 0;
+	}
+	else{
         Node * current = head;
         while(current->next != NULL){
             current = current->next;
             i++;
         }
-        return i;
+        return i;}
     }
     // Display
     void display(){
@@ -142,5 +155,14 @@ class LinkedList{
     }
 };
 
+/*
+int main()
+{ LinkedList l1;
+l1.insertAt(1,34);
+l1.display();
+l1.deletAt(1);
+l1.display();
+}
 
 
+*/
