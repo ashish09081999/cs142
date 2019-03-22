@@ -173,7 +173,7 @@ public:
     {
         //initialising to zero
 		int a=0;
-		heighthelper(root,1,a);
+		heighthelper(root,0,a);
 		cout<<"The height of the binary search tree is "<<a<<endl;
 		return a;
 	}
